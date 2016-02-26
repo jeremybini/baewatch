@@ -21,6 +21,9 @@ app.config(function($urlRouterProvider, $locationProvider, $httpProvider, $state
                 .then(function (response) {
                   return response.data
                 })
+      },
+      email: function($stateParams) {
+        return $stateParams.email
       }
     },
     controller: 'profileCtrl'
@@ -36,6 +39,7 @@ app.controller("main", function($scope,Profile,$state) {
   }
 
 });
+
 
 app.controller("profileCtrl", function($scope, data) {
   // data.socialProfiles.forEach(function(profile) {
@@ -65,8 +69,11 @@ data.socialProfiles.forEach(function(profile){
 
 })
 
+
+
   console.log(data)
-  $scope.data = data
+  $scope.data = data;
+  $scope.email = email;
 });
 
 
