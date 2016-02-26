@@ -2,7 +2,7 @@ var app = angular.module("app", ["firebase","ui.router"]);
 
 app.config(function($urlRouterProvider, $locationProvider, $httpProvider, $stateProvider) {
   // remove '#' from urls
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
   // invalid routes redirect to the root
   $urlRouterProvider.otherwise('/');
 
