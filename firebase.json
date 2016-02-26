@@ -1,0 +1,9 @@
+{
+  "firebase": "baespy",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

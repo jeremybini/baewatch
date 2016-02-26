@@ -38,7 +38,16 @@ app.controller("main", function($scope,Profile,$state) {
 });
 
 app.controller("profileCtrl", function($scope, data) {
+  data.socialProfiles.forEach(function(profile) {
+    var photo = data.photos.filter(function(p) {
+      return p.typeName === profile.typeName
+    })[0]
+    if(photo) profile.photoUrl = photo.url
+    else profile.photoUrl = "img/portfolio/cake.png";
+  });
+
   console.log(data)
+  $scope.data = data
 });
 
 
