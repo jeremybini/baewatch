@@ -53,7 +53,7 @@ app.controller("profileCtrl", function($scope, data, email) {
     else if(profile.typeName === 'GooglePlus') profile.photoUrl = "img/portfolio/googleplus.png";
     else if(profile.typeName === 'Pinterest') profile.photoUrl = "img/portfolio/pinterest.png";
     else if(profile.typeName === 'Foursquare') profile.photoUrl = "img/portfolio/foursquare.png";
-    else if(profile.typeName === 'Vimeo') profile.photoUrl = "img/portfolio/viemo.png";
+    else if(profile.typeName === 'Vimeo') profile.photoUrl = "img/portfolio/vimeo.png";
     else if(profile.typeName === 'Myspace') profile.photoUrl = "img/portfolio/myspace.png";
     else if(profile.typeName === 'Flickr') profile.photoUrl = "img/portfolio/flickr.png";
     else if(profile.typeName === 'Gravatar') profile.photoUrl = "img/portfolio/gravatar.png";
