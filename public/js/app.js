@@ -14,9 +14,7 @@ app.controller("SampleCtrl", function($scope, $firebaseObject, $http) {
   $scope.search = function(email){
   	//make request using to api
 
-
   	//get info
-
 
   	//add to db 
   }
