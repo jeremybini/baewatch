@@ -13,27 +13,32 @@ app.config(function($urlRouterProvider, $locationProvider, $httpProvider, $state
   })
 
   $stateProvider.state('profile', {
-    url: "/profile" ,
+    url: "/profile/:email" ,
     templateUrl: "../templates/profile.template.html",
+    resolve: {
+      data: function ($stateParams, Profile) {
+        return Profile.searchByEmail($stateParams.email)
+                .then(function (response) {
+                  return response.data
+                })
+      }
+    },
     controller: 'profileCtrl'
   })
 
 })
 
-app.controller("main", function($scope) {
+app.controller("main", function($scope,Profile,$state) {
 
-  $scope.search = function(email){
+  $scope.search = function(){
   	//make request using to api
-    // $state.go('profile',{email:email})
-  	//get info
-
-  	//add to db 
+    $state.go('profile', {"email":$scope.email})
   }
 
 });
 
-app.controller("profileCtrl", function($scope) {
-
+app.controller("profileCtrl", function($scope, data) {
+  console.log(data)
 });
 
 
