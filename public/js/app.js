@@ -51,10 +51,11 @@ data.socialProfiles.forEach(function(profile){
   if(profile.typeName === 'Twitter') profile.photoUrl = "img/portfolio/twitter.png";
   if(profile.typeName === 'Klout') profile.photoUrl = "img/portfolio/klout.png";
   if(profile.typeName === 'Github') profile.photoUrl = "img/portfolio/github.png";
-  if(profile.typeName === 'Angelist') profile.photoUrl = "img/portfolio/angelist.png";
-  if(profile.typeName === 'Linkedin') profile.photoUrl = "img/portfolio/linkedin.png";
+  if(profile.typeName === 'AngelList') profile.photoUrl = "img/portfolio/angelist.png";
+  if(profile.typeName === 'LinkedIn') profile.photoUrl = "img/portfolio/linkedin.png";
   if(profile.typeName === 'GooglePlus') profile.photoUrl = "img/portfolio/googleplus.png";
-   if(profile.typeName === 'Pinterest') profile.photoUrl = "img/portfolio/pinterest.png";
+  if(profile.typeName === 'Pinterest') profile.photoUrl = "img/portfolio/pinterest.png";
+  if(profile.typeName === 'Foursquare') profile.photoUrl = "img/portfolio/foursquare.png";
 
 
 })
