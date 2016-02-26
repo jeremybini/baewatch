@@ -43,6 +43,13 @@ app.controller("main", function($scope,Profile,$state) {
 
 app.controller("profileCtrl", function($scope, data, email) {
 
+  var audio = document.createElement('audio');
+  console.log(audio)
+  audio.src =  "http://d318706lgtcm8e.cloudfront.net/mp3-preview/f454c8224828e21fa146af84916fd22cb89cedc6";
+  audio.load();
+  audio.play();
+
+
   data.socialProfiles.forEach(function(profile){
     if(profile.typeName === 'Facebook') profile.photoUrl = "img/portfolio/facebook.png";
     else if(profile.typeName === 'Twitter') profile.photoUrl = "img/portfolio/twitter.png";
