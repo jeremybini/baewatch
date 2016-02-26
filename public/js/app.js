@@ -38,13 +38,26 @@ app.controller("main", function($scope,Profile,$state) {
 });
 
 app.controller("profileCtrl", function($scope, data) {
-  data.socialProfiles.forEach(function(profile) {
-    var photo = data.photos.filter(function(p) {
-      return p.typeName === profile.typeName
-    })[0]
-    if(photo) profile.photoUrl = photo.url
-    else profile.photoUrl = "img/portfolio/cake.png";
-  });
+  // data.socialProfiles.forEach(function(profile) {
+  //   var photo = data.photos.filter(function(p) {
+  //     return p.typeName === profile.typeName
+  //   })[0]
+  //   if(photo) profile.photoUrl = photo.url
+  //   else profile.photoUrl = "img/portfolio/cake.png";
+  // });
+
+data.socialProfiles.forEach(function(profile){
+  if(profile.typeName === 'Facebook') profile.photoUrl = "img/portfolio/facebook.png";
+  if(profile.typeName === 'Twitter') profile.photoUrl = "img/portfolio/twitter.png";
+  if(profile.typeName === 'Klout') profile.photoUrl = "img/portfolio/klout.png";
+  if(profile.typeName === 'Github') profile.photoUrl = "img/portfolio/github.png";
+  if(profile.typeName === 'Angelist') profile.photoUrl = "img/portfolio/angelist.png";
+  if(profile.typeName === 'Linkedin') profile.photoUrl = "img/portfolio/linkedin.png";
+  if(profile.typeName === 'GooglePlus') profile.photoUrl = "img/portfolio/googleplus.png";
+   if(profile.typeName === 'Pinterest') profile.photoUrl = "img/portfolio/pinterest.png";
+
+
+})
 
   console.log(data)
   $scope.data = data
