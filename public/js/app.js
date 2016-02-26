@@ -21,6 +21,9 @@ app.config(function($urlRouterProvider, $locationProvider, $httpProvider, $state
                 .then(function (response) {
                   return response.data
                 })
+      },
+      email: function($stateParams) {
+        return $stateParams.email
       }
     },
     controller: 'profileCtrl'
@@ -37,14 +40,7 @@ app.controller("main", function($scope,Profile,$state) {
 
 });
 
-app.controller("profileCtrl", function($scope, data) {
-  // data.socialProfiles.forEach(function(profile) {
-  //   var photo = data.photos.filter(function(p) {
-  //     return p.typeName === profile.typeName
-  //   })[0]
-  //   if(photo) profile.photoUrl = photo.url
-  //   else profile.photoUrl = "img/portfolio/cake.png";
-  // });
+app.controller("profileCtrl", function($scope, data, email) {
 
 data.socialProfiles.forEach(function(profile){
   if(profile.typeName === 'Facebook') profile.photoUrl = "img/portfolio/facebook.png";
@@ -54,13 +50,12 @@ data.socialProfiles.forEach(function(profile){
   if(profile.typeName === 'Angelist') profile.photoUrl = "img/portfolio/angelist.png";
   if(profile.typeName === 'Linkedin') profile.photoUrl = "img/portfolio/linkedin.png";
   if(profile.typeName === 'GooglePlus') profile.photoUrl = "img/portfolio/googleplus.png";
-   if(profile.typeName === 'Pinterest') profile.photoUrl = "img/portfolio/pinterest.png";
-
-
-})
+  if(profile.typeName === 'Pinterest') profile.photoUrl = "img/portfolio/pinterest.png";
+});
 
   console.log(data)
-  $scope.data = data
+  $scope.data = data;
+  $scope.email = email;
 });
 
 
